@@ -1,7 +1,7 @@
 import { Col, Layout, Row, Typography, Button, Space } from "antd";
 import Navbar from "../Navbar";
 
-import styles from "./MainHeader.module.css";
+import styles from "./MainHeader.module.scss";
 
 const { Header } = Layout;
 const { Title } = Typography;
@@ -11,8 +11,8 @@ const MainHeader = () => {
     <Header className={styles.header}>
       <Row justify="space-between" align="middle">
         <Col flex={1} className={styles.logo}>
-          <Title level={4} className={styles.title}>
-            Lamu
+          <Title level={4} className={styles.logoTitle}>
+            Nubia
           </Title>
         </Col>
         <Col flex={1} className={styles.navbar}>

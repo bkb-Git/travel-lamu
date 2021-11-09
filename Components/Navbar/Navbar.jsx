@@ -1,6 +1,6 @@
 import { Menu } from "antd";
 
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   return (

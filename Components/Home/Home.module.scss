@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+$primary-color: #ab966f;
+$secondary-font: "Raleway", sans-serif;
+
+.image {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white !important;
+  font-size: 95px !important;
+  font-family: $secondary-font;
+}
+
+.bookingForm {
+  z-index: 5;
+  color: white !important;
+}
+
+.bookingFormItem {
+  background-color: rgba(0, 0, 0, 0.5);
+  input {
+    background: transparent;
+    font-weight: 400;
+    color: white;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+  span {
+    color: $primary-color;
+    margin-right: 8px;
+  }
+}
+
+.bookButton {
+  font-weight: 400;
+}
+
+.section2Row1 {
+  min-height: 50vh;
+  width: 100%;
+  padding: 50px 0px;
+}
+
+.section2Row2 {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+}
+
+.section2Card {
+  position: relative !important;
+  background: transparent !important;
+  text-align: center;
+  height: 50vh;
+}
+
+.section2CardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 90px;
+  color: gray;
+}
+
+.section2CardTitle {
+  margin-top: 0.6em;
+  color: $primary-color !important;
+  font-family: $secondary-font;
+}
+
+.slider {
+  width: 85%;
+  height: 85%;
+}

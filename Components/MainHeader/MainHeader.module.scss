@@ -7,7 +7,7 @@
 
 .navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
@@ -23,11 +23,11 @@
 
 .logo {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 
-.title {
+.logoTitle {
   width: 50%;
   color: white !important;
   border: 2px solid white;

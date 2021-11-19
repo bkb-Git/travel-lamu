@@ -1,0 +1,27 @@
+.hotelCard {
+  position: relative;
+  padding: 0 25px !important;
+  width: 100%;
+}
+
+.cover {
+  height: 70%;
+  object-fit: cover;
+}
+
+.details {
+  height: auto !important;
+  padding: 5px 10px;
+}
+
+.priceTag {
+  position: absolute;
+  width: 70px;
+  height: 40px !important;
+  right: 0;
+  top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #c5322d9c;
+}

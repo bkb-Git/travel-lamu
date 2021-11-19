@@ -4,4 +4,12 @@ const withPluginAntdLess = require("next-plugin-antd-less");
 
 module.exports = withPluginAntdLess({
   modifyVars: { "@primary-color": "#ab966f", "@layout-header-background": "#000" },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 });

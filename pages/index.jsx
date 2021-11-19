@@ -6,6 +6,7 @@ import MainLayout from "../Components/MainLayout";
 import Section1 from "../Components/Home/Section1";
 import Section2 from "../Components/Home/Section2";
 import Section3 from "../Components/Home/Section3";
+import Section4 from "../Components/Home/Section4";
 
 const Home = () => {
   const [isShown, setIsShown] = useState(false);
@@ -26,6 +27,7 @@ const Home = () => {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
     </MainLayout>
   );
 };

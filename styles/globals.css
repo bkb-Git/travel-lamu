@@ -21,3 +21,20 @@ a {
 g {
   color: #000;
 }
+
+.sliderArrow {
+  color: #ab966f;
+  font-size: 30px;
+  height: 1em;
+}
+
+.sliderArrow:hover {
+  color: #ab966fb7;
+}
+
+.slick-next {
+  right: -45px;
+}
+.slick-prev {
+  left: -45px;
+}

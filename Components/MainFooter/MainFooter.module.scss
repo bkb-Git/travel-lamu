@@ -1,0 +1,45 @@
+.footer {
+  position: relative;
+  height: 50vh;
+  background: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footerForm {
+  padding: 0 8px;
+}
+
+.facebook {
+  transition: all 0.1s ease-in;
+  margin-right: 0.5em;
+  &:hover {
+    color: #4267b2;
+    cursor: pointer;
+  }
+}
+
+.instagram {
+  transition: all 0.1s ease-in;
+  margin-right: 0.5em;
+  &:hover {
+    color: #833ab4;
+    cursor: pointer;
+  }
+}
+.twitter {
+  transition: all 0.1s ease-in;
+  margin-right: 0.5em;
+  &:hover {
+    color: #1da1f2;
+    cursor: pointer;
+  }
+}
+.pinterest {
+  transition: all 0.1s ease-in;
+  &:hover {
+    color: #e60023;
+    cursor: pointer;
+  }
+}

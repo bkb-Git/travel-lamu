@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 
 import MainLayout from "../Components/MainLayout";
+import MainFooter from "../Components/MainFooter";
 import Section1 from "../Components/Home/Section1";
 import Section2 from "../Components/Home/Section2";
 import Section3 from "../Components/Home/Section3";
@@ -28,6 +29,7 @@ const Home = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <MainFooter />
     </MainLayout>
   );
 };

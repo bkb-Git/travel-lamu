@@ -1,0 +1,77 @@
+$secondary-font: "Raleway", sans-serif;
+$primary-color: #ab966f;
+// Hotel Custom Component //
+
+.sideMenuOptionTitle {
+  font-family: $secondary-font;
+}
+// Hotel Section 1 //
+
+.hotelSection1 {
+  position: relative;
+  top: 64px;
+  height: 40vh;
+  padding: 10px 5px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.hotelSection1FormCard {
+  width: 50%;
+  height: 50%;
+}
+
+.hotelSection1Title {
+  text-align: center;
+  font-family: $secondary-font;
+  color: #333 !important;
+}
+
+.hotelSection1Form {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.hotelSection1FormItem {
+  flex: 1 !important;
+}
+
+// Hotel Section 2 //
+
+.hotelSection2 {
+  position: relative;
+  top: 64px;
+  padding: 1em 10em;
+  background: #f0f2f5;
+}
+
+.hotelSection2SideMenu {
+  background: white !important;
+  padding: 20px 25px;
+  height: fit-content;
+}
+
+.hotelSection2HeaderDetails {
+  font-family: $secondary-font;
+  font-size: 0.9rem;
+  text-align: start;
+}
+
+.hotelSection2ClearFilters {
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+.hotelSection2SortSelect {
+  width: 180px;
+  margin-left: 10px;
+  font-family: $secondary-font;
+}
+
+.hotelSection2SortLabel {
+  font-family: $secondary-font;
+}

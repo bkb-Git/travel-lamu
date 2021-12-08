@@ -4,9 +4,9 @@ import ContentLayout from "../ContentLayout/ContentLayout";
 
 import style from "./MainLayout.module.scss";
 
-const MainLayout = ({ children }) => {
+const MainLayout = ({ children, styles }) => {
   return (
-    <Layout className={style.mainLayout}>
+    <Layout className={style.mainLayout} style={{ ...styles }}>
       <MainHeader />
       <ContentLayout>{children}</ContentLayout>
     </Layout>

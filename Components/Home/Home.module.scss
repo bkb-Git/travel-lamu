@@ -1,5 +1,6 @@
 $primary-color: #ab966f;
 $secondary-font: "Raleway", sans-serif;
+$mobile-or-table-screen: 1200px;
 
 .image {
   position: relative;
@@ -74,6 +75,8 @@ $secondary-font: "Raleway", sans-serif;
   font-weight: 400;
 }
 
+// Section 2
+
 .section2Row1 {
   position: relative;
   height: 50%;
@@ -111,6 +114,8 @@ $secondary-font: "Raleway", sans-serif;
   color: $primary-color !important;
   font-family: $secondary-font;
 }
+
+// Section 3
 
 .section3Part1 {
   display: flex;
@@ -165,6 +170,7 @@ $secondary-font: "Raleway", sans-serif;
 }
 
 .section3Slider1 {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,4 +211,15 @@ $secondary-font: "Raleway", sans-serif;
   width: 90%;
   height: 75%;
   z-index: 1;
+}
+
+@media only screen and (max-width: $mobile-or-table-screen) {
+  .image {
+    height: 35vh;
+    top: 64px;
+  }
+
+  .title {
+    font-size: 54px !important;
+  }
 }

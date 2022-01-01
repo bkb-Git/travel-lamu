@@ -1,6 +1,6 @@
 import { Row, Spin } from "antd";
 import { useEffect, useState } from "react";
-import MainLayout from "../../Components/MainLayout";
+import AboutSection1 from "../../Components/About/AboutSection1";
 
 const About = () => {
   const [isShown, setIsShown] = useState(false);
@@ -16,7 +16,11 @@ const About = () => {
       </Row>
     );
   }
-  return <MainLayout styles={{ background: "white" }}>About us</MainLayout>;
+  return (
+    <Row style={{ background: "white", height: "100%" }}>
+      <AboutSection1 />
+    </Row>
+  );
 };
 
 export default About;

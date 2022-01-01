@@ -1,5 +1,5 @@
-import { Button, Checkbox, Input, Layout, Row, Slider, Typography, Select, Col } from "antd";
-import { useState } from "react";
+import { Button, Checkbox, Input, Layout, Row, Slider, Typography, Select, Col, Skeleton } from "antd";
+import { useState, useEffect } from "react";
 
 import SideMenuOption from "./SideMenuOption";
 import PropertyCard from "./PropertyCard";
@@ -19,6 +19,7 @@ const { Option } = Select;
 
 const HotelSection2 = () => {
   const [priceRange, setPriceRange] = useState([20, 50]);
+  const [hotelsLoading, setHotelsLoading] = useState(true);
 
   const popularProperties = ["Five Stars", "WiFi", "BreakFast Included", "Air Conditioning"];
   const previewHotels = [
@@ -30,13 +31,19 @@ const HotelSection2 = () => {
     { hotelImg: HotelImage6, name: "Courtyard Hotel" },
   ];
 
+  useEffect(() => {
+    setTimeout(() => {
+      setHotelsLoading(false);
+    }, 2000);
+  }, []);
+
   const handlePriceRangeChange = (value) => {
     return setPriceRange(value);
   };
 
-  const handleClearFilters = () => {};
-
-  const renderInputPropertyName = () => <Input size="large" placeholder="Property Name" />;
+  const renderInputPropertyName = () => {
+    return <Input size="large" placeholder="Property Name" />;
+  };
 
   const renderPriceSlider = () => {
     return (
@@ -110,7 +117,7 @@ const HotelSection2 = () => {
         <Paragraph className={styles.hotelSection2HeaderDetails}>
           <Text strong>20</Text> out of <Text strong>300</Text> properties are available and match your filters.
           {"  "}
-          <Text strong className={styles.hotelSection2ClearFilters} onClick={handleClearFilters}>
+          <Text strong className={styles.hotelSection2ClearFilters}>
             Clear all Filters
           </Text>
         </Paragraph>
@@ -130,9 +137,11 @@ const HotelSection2 = () => {
   const renderContent = () => {
     return (
       <Row gutter={[0, 16]} style={{ margin: "16px 0" }}>
-        {previewHotels.map((hotel) => (
-          <PropertyCard key={hotel.name} hotel={hotel} />
-        ))}
+        <Skeleton loading={hotelsLoading} active avatar />
+        <Skeleton loading={hotelsLoading} active avatar />
+        <Skeleton loading={hotelsLoading} active avatar />
+        <Skeleton loading={hotelsLoading} active avatar />
+        {!hotelsLoading && previewHotels.map((hotel) => <PropertyCard key={hotel.name} hotel={hotel} />)}
       </Row>
     );
   };

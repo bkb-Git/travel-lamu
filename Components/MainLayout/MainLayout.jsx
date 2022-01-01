@@ -1,14 +1,19 @@
 import { Layout } from "antd";
+import { useState } from "react";
+
 import MainHeader from "../MainHeader";
 import ContentLayout from "../ContentLayout/ContentLayout";
-
 import style from "./MainLayout.module.scss";
 
-const MainLayout = ({ children, styles }) => {
+import AccountModal from "../AccountModal/AccountModal";
+
+const MainLayout = ({ children, styles, breakpoint }) => {
+  const [isModalVisible, setIsModalVisible] = useState({ signIn: false, signUp: false });
   return (
     <Layout className={style.mainLayout} style={{ ...styles }}>
-      <MainHeader />
+      <MainHeader modalhandler={setIsModalVisible} breakpoint={breakpoint} />
       <ContentLayout>{children}</ContentLayout>
+      <AccountModal modalhandler={setIsModalVisible} isModalVisible={isModalVisible} />
     </Layout>
   );
 };

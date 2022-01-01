@@ -12,8 +12,8 @@ const HotelCard = ({ hotelRoom }) => {
   return (
     <Col className={styles.hotelCard}>
       <Card bodyStyle={{ padding: "0px 0px 10px 0px", position: "relative", height: "100%", width: "100%" }}>
-        <Col span={24} style={{ height: "70%" }}>
-          <Image width={200} height={120} layout="fill" className={styles.cover} src={coverImg} />
+        <Col span={24} style={{ height: "70%", position: "relative" }}>
+          <Image layout="fill" className={styles.cover} src={coverImg} />
           <Card bordered={false} bodyStyle={{ padding: 0 }} className={styles.priceTag}>
             <Statistic value={price} valueStyle={{ color: "white" }} prefix="$" />
           </Card>

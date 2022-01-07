@@ -1,4 +1,4 @@
-$xs-screen-size: 576px;
+$mobile-or-table-screen: 1200px;
 
 .header {
   position: fixed;
@@ -16,6 +16,12 @@ $xs-screen-size: 576px;
 .headerButtons {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.bars {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -39,6 +45,15 @@ $xs-screen-size: 576px;
   margin-top: 0.5em;
 }
 
+.logoTitle2 {
+  width: 50%;
+  color: #333 !important;
+  border: 2px solid #333;
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
 .avatar {
   opacity: 1;
   transition: 0.2s opacity;
@@ -48,12 +63,17 @@ $xs-screen-size: 576px;
   }
 }
 
-@media only screen and (max-width: $xs-screen-size) {
-  .navbar {
-    display: none;
+@media only screen and (max-width: $mobile-or-table-screen) {
+  .header {
+    padding: 0 35px !important;
   }
 
-  .headerButtons {
-    display: none;
+  .logo {
+    text-align: center;
+    justify-content: flex-start;
+  }
+
+  .spaceContainer {
+    width: 100%;
   }
 }

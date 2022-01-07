@@ -89,8 +89,8 @@ const Section2 = () => {
               </Col>
               <Col span={24}>
                 <Text type="secondary">
-                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse
-                  nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.
+                  There are beautiful and historic sites to visit , most famously Lamu Old Town a UNESCO World Heritage
+                  Site.
                 </Text>
               </Col>
             </Row>
@@ -109,8 +109,8 @@ const Section2 = () => {
               </Col>
               <Col span={24}>
                 <Text type="secondary">
-                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse
-                  nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.
+                  You can find comfortable, blissful and affordable places to stay while enjoying the view and weather
+                  during your visit.
                 </Text>
               </Col>
             </Row>
@@ -129,8 +129,8 @@ const Section2 = () => {
               </Col>
               <Col span={24}>
                 <Text type="secondary">
-                  Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse
-                  nec faucibus velit. Quisque eleifend orci ipsum, a bibendum.
+                  Long and beautiful coastlines to heart-warming sunsets, spend your mornings or evenings walking on the
+                  beach.
                 </Text>
               </Col>
             </Row>

@@ -49,7 +49,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <UserContext.Provider value={providerValue}>
-      <MainLayout styles={{ overflowY: "scroll" }} breakpoint={isTabletOrMobile}>
+      <MainLayout breakpoint={isTabletOrMobile}>
         <Component {...pageProps} breakpoint={isTabletOrMobile} />
       </MainLayout>
     </UserContext.Provider>

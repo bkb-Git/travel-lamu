@@ -10,7 +10,7 @@ const { Title } = Typography;
 
 const Section1 = ({ breakpoint }) => {
   return (
-    <Row justify="center" align="start" style={{ height: "100vh" }}>
+    <Row justify="center" align="start" style={{ height: "100vh", background: "white" }}>
       <Col span={24} className={styles.image} style={{ zIndex: 1 }}>
         <Image priority layout="fill" src={Lamu2} />
         <Row>
@@ -26,7 +26,7 @@ const Section1 = ({ breakpoint }) => {
       </Col>
       {breakpoint && (
         <Col span={24}>
-          <BookForm />
+          <BookForm breakpoint={breakpoint} />
         </Col>
       )}
     </Row>

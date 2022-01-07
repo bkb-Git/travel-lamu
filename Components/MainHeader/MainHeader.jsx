@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignOutAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faSignInAlt, faSignOutAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Col, Layout, Row, Typography, Button, Space, Avatar, Dropdown, Menu, Skeleton, notification } from "antd";
 import { useRouter } from "next/dist/client/router";
 
@@ -10,12 +10,14 @@ import Navbar from "../Navbar";
 import UserContext from "../../UserContext/UserContext";
 
 import styles from "./MainHeader.module.scss";
+import DrawerMenu from "./DrawerMenu";
 
 const { Header } = Layout;
 const { Title, Text } = Typography;
 
-const MainHeader = ({ modalhandler }) => {
+const MainHeader = ({ modalhandler, breakpoint }) => {
   const { loading, userDetails, error } = useContext(UserContext);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const auth = getAuth();
 
@@ -25,11 +27,22 @@ const MainHeader = ({ modalhandler }) => {
 
   const renderAuthButtons = () => {
     return (
-      <Space size="middle">
-        <Button type="primary" ghost onClick={() => modalhandler({ signIn: true, signUp: false })}>
+      <Space size="middle" direction={breakpoint ? "vertical" : "horizontal"} className={styles.spaceContainer}>
+        <Button
+          type="primary"
+          block={breakpoint}
+          icon={breakpoint && <FontAwesomeIcon icon={faSignInAlt} style={{ marginRight: "0.5em" }} />}
+          ghost
+          onClick={() => modalhandler({ signIn: true, signUp: false })}
+        >
           Login
         </Button>
-        <Button type="primary" onClick={() => modalhandler({ signIn: false, signUp: true })}>
+        <Button
+          type="primary"
+          block={breakpoint}
+          icon={breakpoint && <FontAwesomeIcon icon={faUser} style={{ marginRight: "0.5em" }} />}
+          onClick={() => modalhandler({ signIn: false, signUp: true })}
+        >
           Register now
         </Button>
       </Space>
@@ -54,12 +67,50 @@ const MainHeader = ({ modalhandler }) => {
         </Menu>
       );
     };
+
+    const renderAvatar = () => {
+      return <Avatar size={32} icon={<FontAwesomeIcon icon={faUser} />} className={styles.avatar} />;
+    };
     return (
-      <Space size="middle">
-        <Dropdown overlay={menu} overlayStyle={{ marginTop: "1em" }} trigger={["click"]}>
-          <Avatar size={32} icon={<FontAwesomeIcon icon={faUser} />} className={styles.avatar} />
-        </Dropdown>
-        <Text style={{ color: "white" }}>{userDetails?.email}</Text>
+      <Space
+        size="middle"
+        direction={breakpoint ? "vertical" : "horizontal"}
+        className={breakpoint && styles.spaceContainer}
+      >
+        {!breakpoint ? (
+          <>
+            <Dropdown overlay={menu} overlayStyle={{ marginTop: "1em" }} trigger={["click"]}>
+              {renderAvatar()}
+            </Dropdown>
+            <Text style={{ color: "white" }}>{userDetails?.email}</Text>
+          </>
+        ) : (
+          <>
+            <Row justify="space-around" align="middle">
+              {renderAvatar()}
+              <Text strong style={{ color: "#333" }}>
+                {userDetails?.email}
+              </Text>
+            </Row>
+            <Button
+              type="primary"
+              block
+              icon={<FontAwesomeIcon icon={faUser} style={{ marginRight: "0.5em" }} />}
+              onClick={() => router.push("/profile")}
+              ghost
+            >
+              Profile
+            </Button>
+            <Button
+              type="primary"
+              block
+              icon={<FontAwesomeIcon icon={faSignOutAlt} style={{ marginRight: "0.5em" }} />}
+              onClick={handleSignOut}
+            >
+              Log Out
+            </Button>
+          </>
+        )}
       </Space>
     );
   };
@@ -88,13 +139,29 @@ const MainHeader = ({ modalhandler }) => {
             Nubia
           </Title>
         </Col>
-        <Col flex={1} className={styles.navbar}>
-          <Navbar />
-        </Col>
-        <Col flex={1} className={styles.headerButtons}>
-          {loading ? <Skeleton loading active avatar paragraph={false} /> : renderAccountState()}
-        </Col>
+        {!breakpoint && (
+          <>
+            <Col flex={1} className={styles.navbar}>
+              <Navbar breakpoint={breakpoint} />
+            </Col>
+            <Col flex={1} className={styles.headerButtons}>
+              {loading ? <Skeleton loading active avatar paragraph={false} /> : renderAccountState()}
+            </Col>
+          </>
+        )}
+        {breakpoint && (
+          <Col flex={1} className={styles.bars}>
+            <Button icon={<FontAwesomeIcon icon={faBars} size="2x" />} size="large" onClick={() => setOpenMenu(true)} />
+          </Col>
+        )}
       </Row>
+      <DrawerMenu
+        openMenu={openMenu}
+        menuHandler={setOpenMenu}
+        breakpoint={breakpoint}
+        modalhandler={modalhandler}
+        accountState={{ loading, renderAccountState }}
+      />
       {renderError()}
     </Header>
   );

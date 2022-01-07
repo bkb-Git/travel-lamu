@@ -32,7 +32,7 @@ const Section3 = () => {
   }, []);
 
   return (
-    <Row justify="center" align="middle" style={{ height: "225vh", background: "#CCCCCC" }}>
+    <Row justify="center" align="middle" style={{ height: "210vh", background: "white" }}>
       <Col span={24} style={{ height: "50%" }}>
         <Row align="middle" style={{ height: "100%" }}>
           <Col span={12} className={styles.section3Part1}>
@@ -42,11 +42,11 @@ const Section3 = () => {
               </Title>
               <Divider className={styles.divider} />
             </Col>
-            <Card className={styles.section3Part1Card}>
+            <Card className={styles.section3Part1Card} bordered={false}>
               <Title className={styles.section3Part1CardTitle} level={2}>
                 Lamu Old Town
               </Title>
-              <Text style={{ color: "#333" }}>
+              <Text type="secondary" strong>
                 Lamu Old Town is the oldest and best-preserved Swahili settlement in East Africa, retaining its
                 traditional functions. Built in coral stone and mangrove timber, the town is characterized by the
                 simplicity of structural forms enriched by such features as inner courtyards, verandas, and elaborately
@@ -57,7 +57,14 @@ const Section3 = () => {
           </Col>
           <Col span={12} className={styles.section3Part2}>
             <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <Slider arrows={false} asNavFor={slider1Nav.nav2} ref={slider1} className={styles.section3Slider1}>
+              <Slider
+                arrows={false}
+                asNavFor={slider1Nav.nav2}
+                ref={slider1}
+                className={styles.section3Slider1}
+                autoplay
+                autoplaySpeed={3000}
+              >
                 <Image src={LamuOldTown1} />
                 <Image src={LamuOldTown2} />
                 <Image src={LamuOldTown3} />
@@ -98,7 +105,14 @@ const Section3 = () => {
         <Row align="middle" style={{ height: "100%" }}>
           <Col span={12} className={styles.section3Part1}>
             <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <Slider arrows={false} asNavFor={slider2Nav.nav2} ref={slider3} className={styles.section3Slider1}>
+              <Slider
+                arrows={false}
+                asNavFor={slider2Nav.nav2}
+                ref={slider3}
+                className={styles.section3Slider1}
+                autoplay
+                autoplaySpeed={3000}
+              >
                 <Image priority src={ShelaBeach1} />
                 <Image src={ShelaBeach2} />
                 <Image src={ShelaBeach3} />
@@ -142,11 +156,11 @@ const Section3 = () => {
               <Divider className={styles.divider} />
             </Col>
 
-            <Card className={styles.section3Part1Card2}>
+            <Card className={styles.section3Part1Card2} bordered={false}>
               <Title className={styles.section3Part1CardTitle} level={2}>
                 Shela Beach
               </Title>
-              <Text style={{ color: "#333" }}>
+              <Text type="secondary" strong>
                 Shela Beach is also known as Shella Beach and is on the island of Lamu in the north of Kenya. It is
                 about two kilometres from Lamu town, the capital of Lamu. You can easily get to Shela Beach by walking
                 along the water’s edge, or by using a boat hired from the locals as a water taxi. There are no proper

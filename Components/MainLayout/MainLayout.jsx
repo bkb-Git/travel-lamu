@@ -7,10 +7,11 @@ import style from "./MainLayout.module.scss";
 
 import AccountModal from "../AccountModal/AccountModal";
 
-const MainLayout = ({ children, styles, breakpoint }) => {
+const MainLayout = ({ children, breakpoint }) => {
   const [isModalVisible, setIsModalVisible] = useState({ signIn: false, signUp: false });
+
   return (
-    <Layout className={style.mainLayout} style={{ ...styles }}>
+    <Layout className={style.mainLayout}>
       <MainHeader modalhandler={setIsModalVisible} breakpoint={breakpoint} />
       <ContentLayout>{children}</ContentLayout>
       <AccountModal modalhandler={setIsModalVisible} isModalVisible={isModalVisible} />

@@ -7,11 +7,10 @@ import style from "./Home.module.scss";
 
 const { RangePicker } = DatePicker;
 
-const BookForm = () => {
+const BookForm = ({ breakpoint }) => {
   const onFinish = () => {};
 
   const disabledDate = (current) => {
-    // Can not select days before today and today
     return current && current < moment().endOf("day");
   };
 
@@ -26,13 +25,8 @@ const BookForm = () => {
     );
   };
 
-  return (
-    <Form
-      className={style.bookingForm}
-      layout="inline"
-      onFinish={onFinish}
-      style={{ justifyContent: "center", alignItems: "center" }}
-    >
+  const renderHotelNameInput = () => {
+    return (
       <Form.Item style={{ flex: 1 }}>
         <Input
           className={style.bookingFormItem}
@@ -42,7 +36,12 @@ const BookForm = () => {
           addonBefore={<FontAwesomeIcon icon={faHotel} />}
         />
       </Form.Item>
-      <Form.Item style={{ flex: 1.2 }}>
+    );
+  };
+
+  const renderDateInput = () => {
+    return (
+      <Form.Item style={{ flex: breakpoint ? 1 : 1.2 }}>
         <Col span={24} style={{ display: "flex" }}>
           <PrefixCalendarIcon />
           <RangePicker
@@ -55,7 +54,12 @@ const BookForm = () => {
           />
         </Col>
       </Form.Item>
-      <Form.Item style={{ flex: 0.7 }}>
+    );
+  };
+
+  const renderGuestInput = () => {
+    return (
+      <Form.Item style={{ flex: breakpoint ? 1 : 0.7 }}>
         <InputNumber
           className={style.bookingFormItem}
           size="large"
@@ -65,7 +69,12 @@ const BookForm = () => {
           max={12}
         />
       </Form.Item>
-      <Form.Item style={{ flex: 0.7 }}>
+    );
+  };
+
+  const renderRoomsInput = () => {
+    return (
+      <Form.Item style={{ flex: breakpoint ? 1 : 0.7 }}>
         <InputNumber
           addonBefore={<FontAwesomeIcon icon={faBed} color="#ab966f" />}
           className={style.bookingFormItem}
@@ -75,11 +84,26 @@ const BookForm = () => {
           max={10}
         />
       </Form.Item>
-      <Form.Item>
-        <Button className={style.bookButton} size="large" type="primary">
+    );
+  };
+
+  const renderBookButton = () => {
+    return (
+      <Form.Item style={breakpoint && { width: "100%" }}>
+        <Button block={breakpoint} className={style.bookButton} size="large" type="primary">
           Book
         </Button>
       </Form.Item>
+    );
+  };
+
+  return (
+    <Form className={style.bookingForm} layout="inline" onFinish={onFinish}>
+      {renderHotelNameInput()}
+      {renderDateInput()}
+      {renderGuestInput()}
+      {renderRoomsInput()}
+      {renderBookButton()}
     </Form>
   );
 };

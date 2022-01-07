@@ -7,9 +7,9 @@ const AccountModal = ({ isModalVisible, modalhandler }) => {
 
   const renderModalContent = () => {
     if (isModalVisible.signIn) {
-      return <SignInForm exitModal={onCancel} />;
+      return <SignInForm exitModal={onCancel} modalhandler={modalhandler} />;
     }
-    return <SignUpForm exitModal={onCancel} />;
+    return <SignUpForm exitModal={onCancel} modalhandler={modalhandler} />;
   };
 
   return (

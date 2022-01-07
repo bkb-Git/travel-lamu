@@ -18,6 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
 g {
   color: #000;
 }
@@ -35,6 +36,13 @@ g {
 .slick-next {
   right: -45px;
 }
+
 .slick-prev {
   left: -45px;
+}
+
+.custom404 {
+  position: relative;
+  top: 64px;
+  height: calc(100% - 64px);
 }

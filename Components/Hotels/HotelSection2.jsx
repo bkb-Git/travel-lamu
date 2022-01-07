@@ -115,7 +115,7 @@ const HotelSection2 = () => {
         }}
       >
         <Paragraph className={styles.hotelSection2HeaderDetails}>
-          <Text strong>20</Text> out of <Text strong>300</Text> properties are available and match your filters.
+          <Text strong>6</Text> out of <Text strong>100</Text> properties are available and match your filters.
           {"  "}
           <Text strong className={styles.hotelSection2ClearFilters}>
             Clear all Filters

@@ -24,13 +24,16 @@ $mobile-or-table-screen: 1200px;
 
 .title2 {
   color: #333 !important;
-  font-size: 90px !important;
+  font-size: 80px !important;
   font-family: $secondary-font;
 }
 
 .bookingForm {
   z-index: 5;
   color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bookingFormItem {
@@ -158,6 +161,7 @@ $mobile-or-table-screen: 1200px;
   border-radius: 15px !important;
   width: 85%;
   height: 15%;
+  background: rgba(128, 128, 128, 0.4) !important;
 }
 
 .divider {
@@ -221,5 +225,9 @@ $mobile-or-table-screen: 1200px;
 
   .title {
     font-size: 54px !important;
+  }
+
+  .bookingForm {
+    flex-direction: column;
   }
 }

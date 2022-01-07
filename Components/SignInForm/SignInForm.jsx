@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Row, Form, Input, Checkbox, Button, Typography, Alert, Col, Divider } from "antd";
+import { Row, Form, Input, Checkbox, Button, Typography, Alert, Divider } from "antd";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import firebaseApp from "../../firebase/firebaseInit";
@@ -8,10 +8,11 @@ import styles from "./SignInForm.module.scss";
 
 const { Title, Text } = Typography;
 
-const SignInForm = ({ exitModal }) => {
-  const auth = getAuth(firebaseApp);
+const SignInForm = ({ exitModal, modalhandler }) => {
   const [userDetails, setUserDetails] = useState(false);
   const [error, setError] = useState(null);
+
+  const auth = getAuth(firebaseApp);
 
   const onFinish = (values) => {
     const { email, password } = values;
@@ -112,7 +113,13 @@ const SignInForm = ({ exitModal }) => {
         <Button type="primary" block htmlType="submit" className="login-form-button" loading={userDetails}>
           Log in
         </Button>
-        Or <Text style={{ color: "#ab966f" }}>register now!</Text>
+        Or{" "}
+        <Text
+          style={{ color: "#ab966f", cursor: "pointer" }}
+          onClick={() => modalhandler({ signIn: false, signUp: true })}
+        >
+          register now!
+        </Text>
       </Form.Item>
     );
   };

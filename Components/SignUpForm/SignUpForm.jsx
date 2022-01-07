@@ -8,7 +8,7 @@ import styles from "./SignUpForm.module.scss";
 
 const { Title, Text } = Typography;
 
-const SignUpForm = ({ exitModal }) => {
+const SignUpForm = ({ exitModal, modalhandler }) => {
   const auth = getAuth(firebaseApp);
   const [userDetails, setUserDetails] = useState({ loading: false });
   const [error, setError] = useState(null);
@@ -148,7 +148,13 @@ const SignUpForm = ({ exitModal }) => {
         <Button type="primary" block htmlType="submit" className="signup-form-button" loading={userDetails.loading}>
           Sign Up
         </Button>
-        Or <Text style={{ color: "#ab966f" }}>Sign In now!</Text>
+        Or{" "}
+        <Text
+          style={{ color: "#ab966f", cursor: "pointer" }}
+          onClick={() => modalhandler({ signIn: true, signUp: false })}
+        >
+          Sign In now!
+        </Text>
       </Form.Item>
     );
   };

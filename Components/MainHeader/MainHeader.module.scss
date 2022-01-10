@@ -19,6 +19,12 @@ $mobile-or-table-screen: 1200px;
   align-items: center;
 }
 
+.loadingSkeleton {
+  div[class="ant-skeleton-header"] {
+    display: flex;
+  }
+}
+
 .bars {
   display: flex;
   justify-content: flex-end;

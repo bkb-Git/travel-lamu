@@ -1,5 +1,4 @@
 # Travel Lamu
->>>>>>> ea11777 (updated readme)
 
 # Introduction
 
@@ -16,4 +15,3 @@ The technologies used to build this app are as follows:
 - Ant Design
 - Firebase (Authentication)
 - FontAwesome
->>>>>>> ea11777 (updated readme)

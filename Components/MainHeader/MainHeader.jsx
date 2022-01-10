@@ -131,6 +131,9 @@ const MainHeader = ({ modalhandler, breakpoint }) => {
       description: error.message,
     });
   };
+
+  const renderSkeleton = () => <Skeleton loading active avatar paragraph={false} className={styles.loadingSkeleton} />;
+
   return (
     <Header className={styles.header}>
       <Row justify="space-between" align="middle">
@@ -145,7 +148,7 @@ const MainHeader = ({ modalhandler, breakpoint }) => {
               <Navbar breakpoint={breakpoint} />
             </Col>
             <Col flex={1} className={styles.headerButtons}>
-              {loading ? <Skeleton loading active avatar paragraph={false} /> : renderAccountState()}
+              {loading ? renderSkeleton() : renderAccountState()}
             </Col>
           </>
         )}

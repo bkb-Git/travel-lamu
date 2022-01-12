@@ -37,6 +37,10 @@ g {
   right: -45px !important;
 }
 
+.slick-list {
+  height: 100% !important;
+}
+
 .slick-prev {
   left: -45px !important;
 }

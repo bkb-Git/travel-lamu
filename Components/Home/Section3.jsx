@@ -35,7 +35,7 @@ const Section3 = () => {
     <Row justify="center" align="middle" style={{ height: "210vh", background: "white" }}>
       <Col span={24} style={{ height: "50%" }}>
         <Row align="middle" style={{ height: "100%" }}>
-          <Col span={12} className={styles.section3Part1}>
+          <Col span={12} className={styles.section3Details}>
             <Col>
               <Title className={styles.title2} style={{ textAlign: "left", marginLeft: "0.5em" }}>
                 (UNESCO) World Heritage Site
@@ -55,30 +55,26 @@ const Section3 = () => {
               </Text>
             </Card>
           </Col>
-          <Col span={12} className={styles.section3Part2}>
-            <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <Slider
-                arrows={false}
-                asNavFor={slider1Nav.nav2}
-                ref={slider1}
-                className={styles.section3Slider1}
-                autoplay
-                autoplaySpeed={3000}
-              >
-                <Image src={LamuOldTown1} />
-                <Image src={LamuOldTown2} />
-                <Image src={LamuOldTown3} />
-                <Image src={LamuOldTown4} />
-                <Image src={LamuOldTown5} />
-              </Slider>
-            </Col>
+          <Col span={12} className={styles.section3Images}>
+            <Slider
+              arrows={false}
+              asNavFor={slider1Nav.nav2}
+              ref={slider1}
+              className={styles.section3Slider1A}
+              autoplay
+              autoplaySpeed={3000}
+            >
+              <Image priority src={LamuOldTown1} />
+              <Image src={LamuOldTown2} />
+              <Image src={LamuOldTown3} />
+              <Image src={LamuOldTown4} />
+              <Image src={LamuOldTown5} />
+            </Slider>
+
             <Card
               bodyStyle={{
                 padding: 15,
                 height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
               }}
               className={styles.section3Part2Card2}
             >
@@ -103,31 +99,34 @@ const Section3 = () => {
       </Col>
       <Col span={24} style={{ height: "50%" }}>
         <Row align="middle" style={{ height: "100%" }}>
-          <Col span={12} className={styles.section3Part1}>
-            <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <Slider
-                arrows={false}
-                asNavFor={slider2Nav.nav2}
-                ref={slider3}
-                className={styles.section3Slider1}
-                autoplay
-                autoplaySpeed={3000}
-              >
-                <Image priority src={ShelaBeach1} />
-                <Image src={ShelaBeach2} />
-                <Image src={ShelaBeach3} />
-                <Image src={ShelaBeach4} />
-                <Image src={ShelaBeach5} />
-              </Slider>
-            </Col>
+          <Col span={12} className={styles.section3Images}>
+            <Slider
+              arrows={false}
+              asNavFor={slider2Nav.nav2}
+              ref={slider3}
+              className={styles.section3Slider1B}
+              autoplay
+              autoplaySpeed={3000}
+            >
+              <Col style={{ position: "relative" }}>
+                <Image layout="responsive" priority src={ShelaBeach1} />
+              </Col>
+              <Col style={{ position: "relative" }}>
+                <Image layout="responsive" src={ShelaBeach2} />
+              </Col>
+              <Image layout="responsive" src={ShelaBeach3} />
+              <Col style={{ position: "relative" }}>
+                <Image layout="responsive" src={ShelaBeach4} />
+              </Col>
+              <Col style={{ position: "relative" }}>
+                <Image layout="responsive" src={ShelaBeach5} />
+              </Col>
+            </Slider>
 
             <Card
               bodyStyle={{
                 padding: 15,
                 height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
               }}
               className={styles.section3Part2Card2}
             >
@@ -148,7 +147,7 @@ const Section3 = () => {
               </Slider>
             </Card>
           </Col>
-          <Col span={12} className={styles.section3Part2}>
+          <Col span={12} className={styles.section3Details}>
             <Col>
               <Title className={styles.title2} style={{ textAlign: "left", marginLeft: "0.5em" }}>
                 Beach-Side

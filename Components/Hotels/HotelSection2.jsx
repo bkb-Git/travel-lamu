@@ -23,12 +23,54 @@ const HotelSection2 = () => {
 
   const popularProperties = ["Five Stars", "WiFi", "BreakFast Included", "Air Conditioning"];
   const previewHotels = [
-    { hotelImg: HotelImage1, name: "RiverSide Hotel" },
-    { hotelImg: HotelImage2, name: "Royal Loch Motel" },
-    { hotelImg: HotelImage3, name: "Grand Season Resort" },
-    { hotelImg: HotelImage4, name: "Twin Luxury Resort" },
-    { hotelImg: HotelImage5, name: "Golden Shrine Motel" },
-    { hotelImg: HotelImage6, name: "Courtyard Hotel" },
+    {
+      hotelImg: HotelImage1,
+      name: "RiverSide Hotel",
+      price: 54,
+      amenities: ["Spa", "BreakFast Included", "Free-Parking"],
+      distanceFromAirport: 12,
+      roomsAvailable: 6,
+    },
+    {
+      hotelImg: HotelImage2,
+      name: "Royal Loch Motel",
+      price: 28,
+      amenities: ["Wifi", "Free-Parking"],
+      distanceFromAirport: 8,
+      roomsAvailable: 4,
+    },
+    {
+      hotelImg: HotelImage3,
+      name: "Grand Season Resort",
+      price: 35,
+      amenities: ["Spa", "Wifi"],
+      distanceFromAirport: 22,
+      roomsAvailable: 8,
+    },
+    {
+      hotelImg: HotelImage4,
+      name: "Twin Luxury Resort",
+      price: 60,
+      amenities: ["Wifi", "BreakFast Included", "Spa"],
+      distanceFromAirport: 14,
+      roomsAvailable: 10,
+    },
+    {
+      hotelImg: HotelImage5,
+      name: "Golden Shrine Motel",
+      price: 40,
+      amenities: ["Free-Parking", "BreakFast Included"],
+      distanceFromAirport: 7,
+      roomsAvailable: 3,
+    },
+    {
+      hotelImg: HotelImage6,
+      name: "Courtyard Hotel",
+      price: 80,
+      amenities: ["Wifi", "Free-Parking", "BreakFast Included"],
+      distanceFromAirport: 12,
+      roomsAvailable: 12,
+    },
   ];
 
   useEffect(() => {

@@ -24,9 +24,9 @@ g {
 }
 
 .sliderArrow {
-  color: #ab966f;
-  font-size: 30px;
-  height: 1em;
+  color: #ab966f !important;
+  font-size: 30px !important;
+  height: 1em !important;
 }
 
 .sliderArrow:hover {
@@ -34,11 +34,11 @@ g {
 }
 
 .slick-next {
-  right: -45px;
+  right: -45px !important;
 }
 
 .slick-prev {
-  left: -45px;
+  left: -45px !important;
 }
 
 .custom404 {

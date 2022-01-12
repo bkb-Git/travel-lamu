@@ -108,19 +108,11 @@ const Section3 = () => {
               autoplay
               autoplaySpeed={3000}
             >
-              <Col style={{ position: "relative" }}>
-                <Image layout="responsive" priority src={ShelaBeach1} />
-              </Col>
-              <Col style={{ position: "relative" }}>
-                <Image layout="responsive" src={ShelaBeach2} />
-              </Col>
-              <Image layout="responsive" src={ShelaBeach3} />
-              <Col style={{ position: "relative" }}>
-                <Image layout="responsive" src={ShelaBeach4} />
-              </Col>
-              <Col style={{ position: "relative" }}>
-                <Image layout="responsive" src={ShelaBeach5} />
-              </Col>
+              <Image priority src={ShelaBeach1} />
+              <Image src={ShelaBeach2} />
+              <Image src={ShelaBeach3} />
+              <Image src={ShelaBeach4} />
+              <Image src={ShelaBeach5} />
             </Slider>
 
             <Card

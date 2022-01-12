@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { Row, Form, Input, Checkbox, Button, Typography, Alert, Divider } from "antd";
+import { faInfo } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Row, Form, Input, Checkbox, Button, Typography, Alert, Divider, Tooltip, Col } from "antd";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import firebaseApp from "../../firebase/firebaseInit";
@@ -33,15 +35,29 @@ const SignInForm = ({ exitModal, modalhandler }) => {
   };
 
   const renderBanner = () => {
+    const exampleCredentials = () => {
+      return (
+        <Row>
+          <Title level={5} style={{ color: "white" }}>
+            Example Credentials
+          </Title>
+          <Col>Email: user@example.com</Col>
+          <Col>Password: test1234</Col>
+        </Row>
+      );
+    };
     return (
       <Form.Item style={{ width: "80%" }}>
-        <Row style={{ padding: 10 }}>
+        <Row style={{ padding: 10 }} justify="flex-start" align="middle">
           <Title level={4} className={styles.logo}>
             Nubia
           </Title>
           <Title level={4} className={styles.title}>
             Agency
           </Title>
+          <Tooltip placement="bottomRight" title={exampleCredentials()}>
+            <Button type="ghost" shape="circle" icon={<FontAwesomeIcon icon={faInfo} color="#ab966f" />} />
+          </Tooltip>
         </Row>
         <Divider style={{ margin: 0, borderColor: "#ab966f" }} />
       </Form.Item>

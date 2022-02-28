@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSignInAlt, faSignOutAlt, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -20,10 +20,30 @@ const MainHeader = ({ modalhandler, breakpoint }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const auth = getAuth();
-
   const router = useRouter();
 
   const handleSignOut = () => signOut(auth);
+
+  const handleScroll = () => {
+    const position = document.getElementById("main-layout").scrollTop;
+    const headerEl = document.getElementById("header-fade");
+
+    if (position > 100) {
+      headerEl.style.background = "#33333360";
+    } else {
+      headerEl.style.background = "#333333";
+    }
+  };
+
+  useEffect(() => {
+    const scrollableElement = document.getElementById("main-layout");
+
+    scrollableElement.addEventListener("scroll", handleScroll);
+
+    return () => {
+      scrollableElement.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const renderAuthButtons = () => {
     return (
@@ -135,7 +155,7 @@ const MainHeader = ({ modalhandler, breakpoint }) => {
   const renderSkeleton = () => <Skeleton loading active avatar paragraph={false} className={styles.loadingSkeleton} />;
 
   return (
-    <Header className={styles.header}>
+    <Header className={styles.header} id="header-fade">
       <Row justify="space-between" align="middle">
         <Col flex={1} className={styles.logo}>
           <Title level={4} className={styles.logoTitle}>

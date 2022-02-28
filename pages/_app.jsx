@@ -1,12 +1,12 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import Head from "next/head";
-import { useRouter } from "next/router";
 import { Row, Spin } from "antd";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useMemo, useState } from "react";
 
-import MainLayout from "../Components/MainLayout";
+import Head from "next/head";
+import { useRouter } from "next/router";
 
+import MainLayout from "../Components/MainLayout";
 import UserContext from "../UserContext/UserContext";
 
 import "../styles/globals.css";

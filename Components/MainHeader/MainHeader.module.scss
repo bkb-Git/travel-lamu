@@ -4,7 +4,8 @@ $mobile-or-table-screen: 1200px;
   position: fixed;
   z-index: 100;
   width: 100%;
-  background: #333;
+  background: #333333;
+  transition: background 0.4s ease-in-out;
 }
 
 .navbar {

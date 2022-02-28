@@ -1,5 +1,6 @@
 import { Row, Col } from "antd";
 import Slider from "react-slick";
+import Fade from "react-reveal/Fade";
 import Image from "next/image";
 
 import TestimonialCard from "../TestimonialCard";
@@ -23,44 +24,53 @@ const messages = {
 const Section4 = () => {
   return (
     <Row justify="center" align="middle" className={styles.section4}>
-      <Col span={24} className={styles.section4Testimonial}>
-        {/* <TestimonialBg className={styles.testimonialSvg} /> */}
-        <Image layout="fill" src={longBeach} className={styles.testimonalSvg} />
-        <Slider
-          infinite
-          arrows={false}
-          slidesToShow={3}
-          slidesToScroll={1}
-          className={styles.section4TestimonialSlider}
-          autoplay
-          autoplaySpeed={2000}
-          pauseOnHover
-        >
-          <TestimonialCard name="Jenni" rating={2} quoteType="right" imgPlaceholder="jenni" message={messages.jenni} />
-          <TestimonialCard name="Jia" rating={4} quoteType="left" imgPlaceholder="jia" message={messages.jia} />
-          <TestimonialCard
-            name="Jeane"
-            rating={3.5}
-            quoteType="right"
-            imgPlaceholder="jeane"
-            message={messages.jeane}
-          />
-          <TestimonialCard
-            name="Jordan"
-            rating={5}
-            quoteType="left"
-            imgPlaceholder="jordan"
-            message={messages.jordan}
-          />
-          <TestimonialCard
-            name="Jabala"
-            rating={2.5}
-            quoteType="right"
-            imgPlaceholder="jabala"
-            message={messages.jabala}
-          />
-        </Slider>
-      </Col>
+      <Fade bottom duration={1500}>
+        <Col span={24} className={styles.section4Testimonial}>
+          <Image layout="fill" src={longBeach} className={styles.testimonalSvg} />
+          <Fade big delay={1000}>
+            <Slider
+              infinite
+              arrows={false}
+              slidesToShow={3}
+              slidesToScroll={1}
+              className={styles.section4TestimonialSlider}
+              autoplay
+              autoplaySpeed={2000}
+              pauseOnHover
+            >
+              <TestimonialCard
+                name="Jenni"
+                rating={2}
+                quoteType="right"
+                imgPlaceholder="jenni"
+                message={messages.jenni}
+              />
+              <TestimonialCard name="Jia" rating={4} quoteType="left" imgPlaceholder="jia" message={messages.jia} />
+              <TestimonialCard
+                name="Jeane"
+                rating={3.5}
+                quoteType="right"
+                imgPlaceholder="jeane"
+                message={messages.jeane}
+              />
+              <TestimonialCard
+                name="Jordan"
+                rating={5}
+                quoteType="left"
+                imgPlaceholder="jordan"
+                message={messages.jordan}
+              />
+              <TestimonialCard
+                name="Jabala"
+                rating={2.5}
+                quoteType="right"
+                imgPlaceholder="jabala"
+                message={messages.jabala}
+              />
+            </Slider>
+          </Fade>
+        </Col>
+      </Fade>
     </Row>
   );
 };

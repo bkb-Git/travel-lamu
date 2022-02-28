@@ -1,5 +1,6 @@
 import { Card, Col, Row, Typography } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Fade from "react-reveal/Reveal";
 import Slider from "react-slick";
 
 import {
@@ -73,10 +74,10 @@ const Section2 = () => {
     />
   );
 
-  return (
-    <Row justify="center" align="middle" style={{ flexDirection: "column", background: "white", height: "120vh" }}>
-      <Row gutter={16} justify="center" align="middle" className={styles.section2Row1}>
-        <Col span={6} style={{ height: "100%" }}>
+  const VisitTheSights = () => {
+    return (
+      <Col span={6} style={{ height: "100%" }}>
+        <Fade left duration={2500}>
           <Card bodyStyle={{ padding: 0, height: "100%" }} className={styles.section2Card} bordered={false}>
             <Row justify="center" align="middle" style={{ height: "100%" }}>
               <Col span={24} className={styles.section2CardIcon}>
@@ -95,8 +96,15 @@ const Section2 = () => {
               </Col>
             </Row>
           </Card>
-        </Col>
-        <Col span={6} style={{ height: "100%" }}>
+        </Fade>
+      </Col>
+    );
+  };
+
+  const Hotels = () => {
+    return (
+      <Col span={6} style={{ height: "100%" }}>
+        <Fade bottom duration={2500}>
           <Card bodyStyle={{ padding: 0, height: "100%" }} className={styles.section2Card} bordered={false}>
             <Row justify="center" align="middle" style={{ height: "100%" }}>
               <Col span={24} className={styles.section2CardIcon}>
@@ -115,8 +123,15 @@ const Section2 = () => {
               </Col>
             </Row>
           </Card>
-        </Col>
-        <Col span={6} style={{ height: "100%" }}>
+        </Fade>
+      </Col>
+    );
+  };
+
+  const Beach = () => {
+    return (
+      <Col span={6} style={{ height: "100%" }}>
+        <Fade right duration={2500}>
           <Card bodyStyle={{ padding: 0, height: "100%" }} className={styles.section2Card} bordered={false}>
             <Row justify="center" align="middle" style={{ height: "100%" }}>
               <Col span={24} className={styles.section2CardIcon}>
@@ -135,9 +150,14 @@ const Section2 = () => {
               </Col>
             </Row>
           </Card>
-        </Col>
-      </Row>
-      <Row justify="center" align="middle" className={styles.section2Row2}>
+        </Fade>
+      </Col>
+    );
+  };
+
+  const HotelRoomsSlider = () => {
+    return (
+      <Fade bottom duration={2500} delay={6000}>
         <Slider
           dots
           infinite
@@ -156,6 +176,19 @@ const Section2 = () => {
           <HotelCard hotelRoom={hotels.hotelRoom3} />
           <HotelCard hotelRoom={hotels.hotelRoom4} />
         </Slider>
+      </Fade>
+    );
+  };
+
+  return (
+    <Row justify="center" align="middle" style={{ flexDirection: "column", background: "white", height: "120vh" }}>
+      <Row gutter={16} justify="center" align="middle" className={styles.section2Row1}>
+        <VisitTheSights />
+        <Hotels />
+        <Beach />
+      </Row>
+      <Row justify="center" align="middle" className={styles.section2Row2}>
+        <HotelRoomsSlider />
       </Row>
     </Row>
   );

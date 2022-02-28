@@ -11,7 +11,7 @@ const MainLayout = ({ children, breakpoint }) => {
   const [isModalVisible, setIsModalVisible] = useState({ signIn: false, signUp: false });
 
   return (
-    <Layout className={style.mainLayout}>
+    <Layout className={style.mainLayout} id="main-layout">
       <MainHeader modalhandler={setIsModalVisible} breakpoint={breakpoint} />
       <ContentLayout>{children}</ContentLayout>
       <AccountModal modalhandler={setIsModalVisible} isModalVisible={isModalVisible} />

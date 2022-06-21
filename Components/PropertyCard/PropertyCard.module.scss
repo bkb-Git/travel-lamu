@@ -1,0 +1,49 @@
+@import "/styles/variables.scss";
+
+.property {
+  &__card {
+    position: relative;
+    height: 35vh;
+    cursor: default;
+    box-sizing: border-box;
+
+    &__likeButton {
+      margin-left: 0.5em;
+      margin-top: 0.5em;
+    }
+
+    &__details {
+      position: relative;
+      height: 100%;
+      padding: 1.5em 2em;
+
+      &__name {
+        font-family: $secondary-font;
+      }
+
+      &__reviews {
+        font-family: $secondary-font;
+        margin-left: 0.5em;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+          color: $primary-color;
+        }
+      }
+
+      &__price {
+        height: 25%;
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__card {
+      &__details {
+        padding: 0.5em 1em;
+      }
+    }
+  }
+}

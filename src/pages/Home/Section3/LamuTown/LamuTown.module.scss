@@ -1,0 +1,76 @@
+@import "../../../../../styles/variables.scss";
+
+.lamuTown {
+  height: 100%;
+
+  &__details {
+    &__title {
+      color: #333 !important;
+      font-size: 80px !important;
+      font-family: $secondary-font;
+      text-align: "left";
+      margin-left: "0.5em";
+    }
+
+    &__underline {
+      float: left;
+      width: 75%;
+
+      &__divider {
+        border-top: 2px solid $primary-color !important;
+      }
+    }
+
+    &__card {
+      margin-left: 40px !important;
+      border-radius: 15px !important;
+
+      &__title {
+        color: $primary-color !important;
+        font-family: $secondary-font;
+      }
+    }
+  }
+
+  &__images {
+    height: 80%;
+    z-index: 2;
+
+    &__sliderDivider {
+      width: 85%;
+      height: 85%;
+
+      div {
+        height: 100%;
+      }
+    }
+
+    &__cardSlider {
+      border-radius: 15px !important;
+      background-color: $primary-color;
+
+      img {
+        height: 100% !important;
+      }
+
+      &__dots {
+        // color: black;
+      }
+    }
+
+    div[class="react-reveal"] {
+      height: 100%;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__details {
+      &__title {
+        font-size: 2.5rem !important;
+      }
+      &__card {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}

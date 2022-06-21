@@ -1,0 +1,25 @@
+@import "/styles/variables.scss";
+
+.footer {
+  position: relative;
+  height: 50vh;
+  background: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__details {
+    position: relative;
+    height: 100%;
+    width: 80%;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: auto;
+
+    &__details {
+      width: auto;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../../../../styles/variables.scss";
+
+.aboutPage {
+  position: relative;
+  top: 64px;
+  height: calc(100% - 64px);
+
+  &__leftSide {
+    &__title {
+      font-size: 64px !important;
+      color: #333 !important;
+      font-family: $secondary-font;
+      text-align: center;
+    }
+
+    &__details {
+      padding: 0 10em;
+      line-height: 2em;
+      word-spacing: 2px;
+      font-family: $secondary-font;
+    }
+
+    &__contactDetails {
+      margin-top: 3em;
+
+      button {
+        cursor: default;
+        font-family: $secondary-font;
+
+        svg {
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    margin: 4rem 0;
+
+    &__leftSide {
+      &__title {
+        font-size: 2.5rem !important;
+      }
+
+      &__details {
+        padding: 0;
+      }
+
+      &__contactDetails {
+        &__buttonContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

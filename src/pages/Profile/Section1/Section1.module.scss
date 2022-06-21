@@ -1,0 +1,40 @@
+$secondary-font: "Raleway", sans-serif;
+$primary-color: #ab966f;
+
+// Profile Section 1
+
+.profileSection1 {
+  position: relative;
+  top: 64px;
+  height: calc(50% - 64px);
+}
+
+.profileBackground {
+  position: absolute;
+  height: 9rem;
+  width: 100vw;
+  background: #808080;
+  border-bottom: 1px solid #333;
+}
+
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3rem;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 12rem;
+}

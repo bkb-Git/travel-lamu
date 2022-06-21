@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.service {
+  height: 90%;
+
+  &__button {
+    height: 10rem;
+    width: 10rem;
+    transition: 0.5s background;
+
+    svg {
+      font-size: 64px;
+      transition: 0.5s color;
+    }
+
+    &:hover {
+      background: $primary-color;
+
+      svg {
+        color: white;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: auto;
+  }
+}

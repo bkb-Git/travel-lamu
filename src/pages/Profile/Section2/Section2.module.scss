@@ -1,0 +1,46 @@
+.profileSection2 {
+  position: relative;
+  top: 64px;
+  height: 50%;
+}
+
+.profileCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.profileCard {
+  width: 100%;
+  height: 80%;
+
+  &:hover .editButton {
+    opacity: 1;
+  }
+}
+
+.editButton {
+  opacity: 0;
+  transition: 0.2s opacity;
+  color: #333;
+
+  &:hover {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
+
+.closeFormButton {
+  color: #ff0000;
+  transition: 0.2s color;
+
+  &:hover {
+    color: #ff0000be;
+    cursor: pointer;
+  }
+}
+
+.cardTitle {
+  font-family: $secondary-font;
+}

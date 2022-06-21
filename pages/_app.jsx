@@ -1,29 +1,25 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { Row, Spin } from "antd";
-import { useMediaQuery } from "react-responsive";
 import { useEffect, useMemo, useState } from "react";
-
-import Head from "next/head";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
-import MainLayout from "../Components/MainLayout";
+import MainLayout from "../src/layout/MainLayout";
 import UserContext from "../UserContext/UserContext";
+import Loader from "../Components/Loader";
 
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }) => {
   const [user, setUser] = useState({ loading: true, userDetails: null, error: null });
-  const [isShown, setIsShown] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const providerValue = useMemo(() => user, [user]);
   const auth = getAuth();
 
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1200px)" });
-
   useEffect(() => {
-    setIsShown(true);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -42,14 +38,6 @@ const MyApp = ({ Component, pageProps }) => {
         })
     );
   }, [auth]);
-
-  if (!isShown) {
-    return (
-      <Row justify="center" align="middle" style={{ height: "100vh" }}>
-        <Spin size="large" />
-      </Row>
-    );
-  }
 
   const HeadElement = () => {
     const routes = {
@@ -74,11 +62,13 @@ const MyApp = ({ Component, pageProps }) => {
     );
   };
 
+  if (loading || user.loading) return <Loader />;
+
   return (
     <UserContext.Provider value={providerValue}>
-      <MainLayout breakpoint={isTabletOrMobile}>
+      <MainLayout>
         <HeadElement />
-        <Component {...pageProps} breakpoint={isTabletOrMobile} />
+        <Component {...pageProps} />
       </MainLayout>
     </UserContext.Provider>
   );

@@ -1,0 +1,16 @@
+@import "../../../styles/variables.scss";
+
+@media only screen and (max-width: $mobile-or-table-screen) {
+  .image {
+    height: 35vh;
+    top: 64px;
+  }
+
+  .title {
+    font-size: 54px !important;
+  }
+
+  .bookingForm {
+    flex-direction: column;
+  }
+}

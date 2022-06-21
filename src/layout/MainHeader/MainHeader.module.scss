@@ -1,0 +1,56 @@
+@import "/styles/variables.scss";
+
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background: #333333;
+  transition: background 0.4s ease-in-out;
+
+  &__logo {
+    &__title {
+      color: white !important;
+      border: 2px solid white;
+      padding: 3px;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 0.5em;
+    }
+  }
+
+  &__loadingSkeleton {
+    div[class="ant-skeleton-header"] {
+      display: flex;
+    }
+  }
+
+  &__buttons {
+    &__container {
+      &__item {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__avatar {
+    opacity: 1;
+    transition: 0.2s opacity;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    padding: 0 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__buttons {
+      &__container {
+        width: 100%;
+      }
+    }
+  }
+}

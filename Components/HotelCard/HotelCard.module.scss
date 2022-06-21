@@ -1,27 +1,86 @@
-.hotelCard {
-  position: relative;
-  padding: 0 25px !important;
-  width: 100%;
-}
+@import "/styles/variables.scss";
 
-.cover {
-  height: 70%;
-  object-fit: cover;
-}
+.card {
+  // position: relative;
+  width: 85%;
+  height: 50vh !important;
+  transform: translate(10%);
 
-.details {
-  height: auto !important;
-  padding: 5px 10px;
-}
+  &__image {
+    height: 70% !important;
 
-.priceTag {
-  position: absolute;
-  width: 70px;
-  height: 40px !important;
-  right: 0;
-  top: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #c5322d9c;
+    &__cover {
+      object-fit: cover;
+    }
+
+    &__priceTag {
+      position: absolute;
+      width: 70px;
+      height: 40px !important;
+      right: 0;
+      top: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #c5322d9c;
+    }
+  }
+
+  &__details {
+    height: 30% !important;
+
+    &__hotelName {
+      height: auto !important;
+      margin-bottom: 0.5em;
+    }
+
+    &__rating {
+      height: auto !important;
+      margin-bottom: 0.5em;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__roomType {
+      height: auto !important;
+
+      svg {
+        height: 1rem;
+      }
+    }
+
+    &__button {
+      height: auto !important;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: 100% !important;
+    width: 100%;
+    transform: none;
+
+    &__image {
+      height: 60% !important;
+    }
+
+    &__details {
+      height: 40% !important;
+      padding: 1em 0;
+
+      &__hotelName {
+        margin-bottom: 0;
+      }
+
+      &__rating {
+        justify-content: flex-start;
+      }
+    }
+
+    // &__image {
+    //   height: 50% !important;
+    // }
+  }
 }

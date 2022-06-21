@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.arrow {
+  color: $primary-color;
+  height: 2rem;
+  width: 2rem;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:hover {
+    color: adjust-color($color: $primary-color, $alpha: 0.7);
+  }
+}
+
+.carousel {
+  svg {
+    &[id="prevArrow"] {
+      @extend .arrow;
+    }
+
+    &[id="nextArrow"] {
+      @extend .arrow;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    [class="slick-track"] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

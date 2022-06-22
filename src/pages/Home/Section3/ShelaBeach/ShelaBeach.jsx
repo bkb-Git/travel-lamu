@@ -142,7 +142,7 @@ const ShelaBeach = () => {
     <Row justify="center" align="middle" className={style.shelaBeach}>
       {!isMobileOrTablet && renderShelaBeachImages()}
       <Col xs={22} sm={22} lg={12} className={style.shelaBeach__details}>
-        <Fade right duration={1500}>
+        <Fade right={!isMobileOrTablet} bottom={isMobileOrTablet} duration={1500}>
           {renderDetails()}
         </Fade>
       </Col>

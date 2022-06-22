@@ -141,7 +141,7 @@ const LamuTown = () => {
   return (
     <Row justify="center" align="middle" className={style.lamuTown}>
       <Col xs={22} sm={22} lg={12} className={style.lamuTown__details}>
-        <Fade left duration={1500}>
+        <Fade left={!isMobileOrTablet} bottom={isMobileOrTablet} duration={1500}>
           {renderDetails()}
         </Fade>
       </Col>

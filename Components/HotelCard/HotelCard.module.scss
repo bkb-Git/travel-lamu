@@ -7,11 +7,7 @@
   transform: translate(10%);
 
   &__image {
-    height: 70% !important;
-
-    &__cover {
-      object-fit: cover;
-    }
+    height: 35vh !important;
 
     &__priceTag {
       position: absolute;

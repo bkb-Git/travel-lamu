@@ -17,7 +17,7 @@ const HotelCard = (props) => {
   const renderImage = () => {
     return (
       <>
-        <Image layout="fill" className={style.card__image__cover} src={coverImg} />
+        <Image layout="fill" objectFit="cover" src={coverImg} />
         <Card bordered={false} bodyStyle={{ padding: 0 }} className={style.card__image__priceTag}>
           <Statistic value={price} valueStyle={{ color: "white" }} prefix="$" />
         </Card>

@@ -25,11 +25,7 @@ const ProfilePage = () => {
     );
   }
 
-  return (
-    <Row style={{ height: "100%", background: "white", flexDirection: "column" }}>
-      <Profile />
-    </Row>
-  );
+  return <Profile user={userDetails} />;
 };
 
 export default ProfilePage;

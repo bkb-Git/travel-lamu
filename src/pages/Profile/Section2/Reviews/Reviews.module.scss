@@ -1,0 +1,34 @@
+@import "/styles/variables.scss";
+
+.reviews {
+  &__item {
+    color: $primary-color;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: $primary-color;
+  }
+
+  &__edit {
+    transition: color, opacity 0.2s;
+    color: #333;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__closeForm {
+    color: #ff0000;
+    transition: 0.2s color;
+
+    &:hover {
+      color: #ff0000be;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-family: $secondary-font;
+  }
+}

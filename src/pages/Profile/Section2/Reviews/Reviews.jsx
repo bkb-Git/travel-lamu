@@ -1,22 +1,22 @@
 import { faComment, faWindowClose } from "@fortawesome/free-regular-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Card, Col, Space, Typography } from "antd";
+import { Button, Card, Col, Row, Space, Typography } from "antd";
 import { useState } from "react";
 import { reviews } from "../../../../../Utls/constants";
 
-import styles from "../profile.module.scss";
+import style from "./Reviews.module.scss";
 
 const { Text } = Typography;
 
 const Reviews = () => {
   const [editReviews, setEditReviews] = useState(false);
 
-  const CardTitle = ({ title, icon }) => {
+  const cardTitle = () => {
     return (
-      <Col className={styles.cardTitle}>
-        <FontAwesomeIcon icon={icon} style={{ marginRight: "0.5rem" }} color="#ab966f" />
-        {title}
+      <Col className={style.reviews__title}>
+        <FontAwesomeIcon icon={faComment} style={{ marginRight: "0.5rem" }} color="#ab966f" />
+        Reviews
       </Col>
     );
   };
@@ -31,7 +31,7 @@ const Reviews = () => {
           icon={faWindowClose}
           id={`${reviews}-close`}
           size="2x"
-          className={styles.closeFormButton}
+          className={style.reviews__closeForm}
           onClick={() => setEditReviews(false)}
         />
       </Space>
@@ -39,28 +39,32 @@ const Reviews = () => {
   };
 
   const EditButton = () => (
-    <FontAwesomeIcon icon={faEdit} id={reviews} className={styles.editButton} onClick={() => setEditReviews(true)} />
+    <FontAwesomeIcon icon={faEdit} id={reviews} className={style.reviews__edit} onClick={() => setEditReviews(true)} />
   );
 
   const renderReviews = () => {
     return (
-      <Card style={{ borderRadius: "20px", borderWidth: "2px", borderColor: "#ab966f" }}>
+      <Card className={style.reviews__item}>
         <FontAwesomeIcon icon={faComment} color="#ab966f" style={{ marginRight: ".5em" }} />
-        <Text className={styles.cardTitle}>No Reviews</Text>
+        <Text className={style.reviews__title}>No Reviews</Text>
       </Card>
     );
   };
 
   return (
-    <Card
-      extra={editReviews ? <FormButton /> : <EditButton />}
-      title={<CardTitle title="Reviews" icon={faComment} />}
-      className={styles.profileCard}
-      bordered={false}
-      headStyle={{ borderColor: "#ab966f" }}
-    >
-      {renderReviews()}
-    </Card>
+    <Row justify="center" align="middle">
+      <Col span={20}>
+        <Card
+          extra={editReviews ? <FormButton /> : <EditButton />}
+          title={cardTitle()}
+          className={style.reviews}
+          bordered={false}
+          headStyle={{ borderColor: "#ab966f" }}
+        >
+          {renderReviews()}
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

@@ -3,38 +3,33 @@ $primary-color: #ab966f;
 
 // Profile Section 1
 
-.profileSection1 {
+.user {
   position: relative;
   top: 64px;
   height: calc(50% - 64px);
-}
 
-.profileBackground {
-  position: absolute;
-  height: 9rem;
-  width: 100vw;
-  background: #808080;
-  border-bottom: 1px solid #333;
-}
+  &__header {
+    background: #808080;
+    border-bottom: 1px solid #333;
 
-.user {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 3rem;
-}
+    &__profile {
+      height: 100%;
 
-.userDetails {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+      &__avatar {
+        height: 100%;
 
-.avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 12rem;
-  height: 12rem;
+        &__image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 12rem;
+          height: 12rem;
+        }
+      }
+
+      &__title {
+        color: white !important;
+      }
+    }
+  }
 }

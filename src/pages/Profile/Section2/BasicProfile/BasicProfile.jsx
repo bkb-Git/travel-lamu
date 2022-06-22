@@ -1,37 +1,25 @@
+import { useState } from "react";
 import { faAddressCard, faWindowClose } from "@fortawesome/free-regular-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, Col, Form, Input, Row, Space, Typography } from "antd";
-import { useState } from "react";
+
 import { basicInfo } from "../../../../../Utls/constants";
+import ProfileItem from "./ProfileItem";
 
-import styles from "../profile.module.scss";
+import style from "./BasicProfile.module.scss";
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 
 const BasicProfile = ({ user }) => {
   const { loading, userDetails } = user;
   const [editBasicProfile, setEditBasicProfile] = useState(false);
 
-  const CardTitle = ({ title, icon }) => {
+  const cardTitle = () => {
     return (
-      <Col className={styles.cardTitle}>
-        <FontAwesomeIcon icon={icon} style={{ marginRight: "0.5rem" }} color="#ab966f" />
-        {title}
-      </Col>
-    );
-  };
-
-  const BasicProfileItem = ({ name, data, span }) => {
-    return (
-      <Col
-        span={span}
-        style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", marginBottom: "1rem" }}
-      >
-        <Text type="secondary">{name}</Text>
-        <Title level={5} style={{ marginLeft: "1rem", marginTop: 0, marginBottom: 0 }}>
-          {data}
-        </Title>
+      <Col className={style.basicProfile__title}>
+        <FontAwesomeIcon icon={faAddressCard} style={{ marginRight: "0.5rem" }} color="#ab966f" />
+        Basic Information
       </Col>
     );
   };
@@ -45,7 +33,7 @@ const BasicProfile = ({ user }) => {
         icon={faWindowClose}
         id={`${basicInfo}-close`}
         size="2x"
-        className={styles.closeFormButton}
+        className={style.basicProfile__closeForm}
         onClick={() => setEditBasicProfile(false)}
       />
     </Space>
@@ -55,7 +43,7 @@ const BasicProfile = ({ user }) => {
     <FontAwesomeIcon
       icon={faEdit}
       id={basicInfo}
-      className={styles.editButton}
+      className={style.basicProfile__edit}
       onClick={() => setEditBasicProfile(true)}
     />
   );
@@ -78,11 +66,11 @@ const BasicProfile = ({ user }) => {
 
   const renderBasicProfileDetails = () => {
     return (
-      <Row justify="flex-start" align="middle">
-        <BasicProfileItem span={24} name="Name" data={userDetails?.displayName} />
-        <BasicProfileItem span={24} name="Username" data="BlazerTraveler1345" />
-        <BasicProfileItem span={24} name="Email" data={userDetails?.email} />
-        <BasicProfileItem
+      <Row gutter={[0, 8]} justify="flex-start" align="middle">
+        <ProfileItem span={24} name="Name" data={userDetails?.displayName} />
+        <ProfileItem span={24} name="Username" data="BlazerTraveler1345" />
+        <ProfileItem span={24} name="Email" data={userDetails?.email} />
+        <ProfileItem
           span={24}
           name="Account"
           data={
@@ -94,16 +82,20 @@ const BasicProfile = ({ user }) => {
   };
 
   return (
-    <Card
-      extra={editBasicProfile ? <FormButton /> : <EditButton />}
-      title={<CardTitle title="Basic Information" icon={faAddressCard} />}
-      className={styles.profileCard}
-      bordered={false}
-      headStyle={{ borderColor: "#ab966f" }}
-      loading={loading}
-    >
-      {editBasicProfile ? renderBasicProfileForm() : renderBasicProfileDetails()}
-    </Card>
+    <Row justify="center" align="middle">
+      <Col span={20}>
+        <Card
+          extra={editBasicProfile ? <FormButton /> : <EditButton />}
+          title={cardTitle()}
+          className={style.basicProfile}
+          bordered={false}
+          headStyle={{ borderColor: "#ab966f" }}
+          loading={loading}
+        >
+          {editBasicProfile ? renderBasicProfileForm() : renderBasicProfileDetails()}
+        </Card>
+      </Col>
+    </Row>
   );
 };
 

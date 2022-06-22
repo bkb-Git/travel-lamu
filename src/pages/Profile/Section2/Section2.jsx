@@ -1,21 +1,25 @@
-import { Col, Row } from "antd";
+import { Col, Row, Grid } from "antd";
 
 import BasicProfile from "./BasicProfile";
 import Reviews from "./Reviews/Reviews";
 import Favorites from "./Favorites/Favorites";
 
-import styles from "../profile.module.scss";
+import style from "./Section2.module.scss";
+
+const { useBreakpoint } = Grid;
 
 const Section2 = ({ user }) => {
+  const { xs, sm, lg } = useBreakpoint();
+  const isMobileOrTablet = (xs || sm) && !lg;
   return (
-    <Row justify="space-around" align="center" className={styles.profileSection2}>
-      <Col span={6} className={styles.profileCardContainer}>
+    <Row gutter={isMobileOrTablet && [0, 16]} justify="space-around" align="center" className={style.userInfo}>
+      <Col xs={22} sm={22} lg={8}>
         <BasicProfile user={user} />
       </Col>
-      <Col span={6} className={styles.profileCardContainer}>
+      <Col xs={22} sm={22} lg={8}>
         <Reviews user={user} />
       </Col>
-      <Col span={6} className={styles.profileCardContainer}>
+      <Col xs={22} sm={22} lg={8}>
         <Favorites user={user} />
       </Col>
     </Row>

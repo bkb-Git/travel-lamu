@@ -1,0 +1,26 @@
+@import "../../../../../styles/variables.scss";
+
+.offer {
+  height: 100%;
+
+  &__card {
+    position: relative !important;
+    background: transparent !important;
+    text-align: center;
+    height: 40vh;
+
+    &__title {
+      margin-top: 0.6em;
+      color: $primary-color !important;
+      font-family: $secondary-font;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: 50vh;
+
+    &__card {
+      height: 100%;
+    }
+  }
+}

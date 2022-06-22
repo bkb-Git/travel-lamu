@@ -1,0 +1,39 @@
+@import "../../../../styles/variables.scss";
+
+.section4 {
+  position: relative;
+  height: 80vh;
+  background: white;
+  padding: 10vh 0;
+
+  &__testimonial {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    &__svg {
+      z-index: 0;
+    }
+
+    &__slider {
+      position: absolute;
+      top: 12.5%;
+      right: 5%;
+      width: 90%;
+      height: 75%;
+      z-index: 1;
+    }
+  }
+
+  div[class="react-reveal"] {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div[class="ant-carousel"] {
+    width: 90%;
+  }
+}

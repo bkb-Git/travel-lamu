@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.landingPage {
+  position: relative;
+  height: auto;
+  background: white;
+
+  &__image {
+    position: relative;
+    height: 100vh;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+
+    &__titleContainer {
+      &__title {
+        color: white !important;
+        font-size: 95px !important;
+        font-family: $secondary-font;
+      }
+    }
+
+    &__button {
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__image {
+      width: 100%;
+    }
+    &__content {
+      &__titleContainer {
+        &__title {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import "../../../../styles/variables.scss";
+
+.sites {
+  // height: auto;
+  background: white;
+  overflow: hidden;
+
+  &__section {
+    margin: $section-space 0;
+  }
+}

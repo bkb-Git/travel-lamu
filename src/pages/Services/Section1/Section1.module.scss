@@ -1,0 +1,25 @@
+@import "/styles/variables.scss";
+
+.section {
+  position: relative;
+  top: 64px;
+  height: 20vh;
+  background: white;
+  margin: 3rem 0;
+
+  &__title {
+    font-size: 86px !important;
+    text-align: center;
+    font-family: $secondary-font;
+    margin-bottom: 0 !important;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: auto;
+    margin: 4rem 0 1rem 0;
+
+    &__title {
+      font-size: 38px !important;
+    }
+  }
+}

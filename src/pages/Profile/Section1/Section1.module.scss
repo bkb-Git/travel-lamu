@@ -1,0 +1,35 @@
+$secondary-font: "Raleway", sans-serif;
+$primary-color: #ab966f;
+
+// Profile Section 1
+
+.user {
+  position: relative;
+  top: 64px;
+  height: calc(50% - 64px);
+
+  &__header {
+    background: #808080;
+    border-bottom: 1px solid #333;
+
+    &__profile {
+      height: 100%;
+
+      &__avatar {
+        height: 100%;
+
+        &__image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 12rem;
+          height: 12rem;
+        }
+      }
+
+      &__title {
+        color: white !important;
+      }
+    }
+  }
+}

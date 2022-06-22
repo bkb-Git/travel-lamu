@@ -1,0 +1,24 @@
+@import "/styles/variables.scss";
+
+.service {
+  margin: 4rem 0;
+
+  &__title {
+    font-size: 64px !important;
+    text-align: center;
+    margin-bottom: 1.5em !important;
+    color: #333 !important;
+    font-family: $secondary-font;
+  }
+
+  &__description {
+    line-height: 2em;
+    font-family: $secondary-font;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__title {
+      font-size: 2.5rem !important;
+    }
+  }
+}

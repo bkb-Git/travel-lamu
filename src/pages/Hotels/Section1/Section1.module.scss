@@ -1,0 +1,46 @@
+@import "../../../../styles/variables.scss";
+
+.banner {
+  position: relative;
+  top: 64px;
+  height: 40vh;
+  padding: 10px 5px;
+
+  &__card {
+    width: 50%;
+    height: 50%;
+
+    &__form {
+      justify-content: flex-start;
+      align-items: center;
+
+      &__item {
+        flex: 1 !important;
+      }
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $secondary-font;
+    color: #333 !important;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__card {
+      width: auto;
+
+      &__form {
+        justify-content: center;
+
+        &__item {
+          flex: none !important;
+        }
+      }
+    }
+  }
+}

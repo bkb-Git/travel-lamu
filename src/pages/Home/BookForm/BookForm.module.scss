@@ -1,0 +1,74 @@
+@import "../../../../styles/variables.scss";
+
+.form {
+  color: white !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    width: 100% !important;
+
+    &__bookingButton {
+      font-weight: 400;
+    }
+
+    &__guestInput {
+      background-color: transparent;
+
+      svg {
+        color: $primary-color;
+      }
+    }
+
+    &__roomsInput {
+      background-color: transparent;
+    }
+
+    input {
+      background: transparent;
+      font-weight: 400;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    span {
+      color: $primary-color;
+      margin-right: 8px;
+    }
+
+    svg {
+      height: 14px;
+    }
+  }
+
+  &__rangePicker {
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    width: 100% !important;
+
+    input {
+      background: transparent;
+      font-weight: 400;
+      color: white !important;
+
+      &::placeholder {
+        color: white !important;
+      }
+    }
+    span {
+      color: $primary-color;
+      margin-right: 8px;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    flex-direction: column;
+    align-items: flex-start;
+    &__item {
+      width: auto !important;
+    }
+  }
+}

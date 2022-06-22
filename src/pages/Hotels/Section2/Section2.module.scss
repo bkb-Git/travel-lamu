@@ -1,0 +1,58 @@
+@import "../../../../styles/variables.scss";
+
+.section {
+  position: relative;
+  top: 64px;
+  padding: 1em 10em;
+  background: #f0f2f5;
+
+  &__sideMenu {
+    background: white !important;
+    padding: 20px 25px;
+    height: fit-content;
+  }
+
+  &__header {
+    padding: 0;
+    background: transparent;
+
+    &__details {
+      font-family: $secondary-font;
+      font-size: 0.9rem;
+      text-align: start;
+    }
+
+    &__clearFilters {
+      &:hover {
+        color: $primary-color;
+        cursor: pointer;
+      }
+    }
+
+    &__label {
+      font-family: $secondary-font;
+    }
+
+    &__select {
+      width: 180px;
+      margin-left: 10px;
+      font-family: $secondary-font;
+    }
+  }
+
+  &__propertyCardContainer {
+    margin: 16px 0;
+  }
+
+  &__innerLayout {
+    margin: 0 30px;
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    padding: 1em 0;
+
+    &__innerLayout {
+      margin: 0;
+    }
+  }
+}

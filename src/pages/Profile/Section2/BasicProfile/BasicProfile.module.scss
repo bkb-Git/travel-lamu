@@ -1,0 +1,27 @@
+@import "/styles/variables.scss";
+
+.basicProfile {
+  &__edit {
+    transition: color, opacity 0.2s;
+    color: #333;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__closeForm {
+    color: #ff0000;
+    transition: 0.2s color;
+
+    &:hover {
+      color: #ff0000be;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-family: $secondary-font;
+  }
+}

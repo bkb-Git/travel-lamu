@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+
+.section2 {
+  background: white;
+  height: auto;
+  margin: $section-space 0;
+
+  &__whatToExpect {
+    height: 50%;
+    // padding: 50px 0px;
+
+    div[class="react-reveal"] {
+      height: 100%;
+    }
+  }
+
+  &__HotelRooms {
+    position: relative;
+    height: 50%;
+
+    div[class="react-reveal"] {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div[class="ant-carousel"] {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    &__whatToExpect {
+      padding: 0;
+    }
+
+    &__HotelRooms {
+      height: auto;
+    }
+  }
+}
+
+.section2Row1Col {
+  height: 100%;
+}

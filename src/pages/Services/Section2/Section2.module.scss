@@ -1,0 +1,13 @@
+@import "/styles/variables.scss";
+
+.section {
+  position: relative;
+  top: 64px;
+  margin: 3rem 0;
+  height: 40vh;
+  background: white;
+
+  @media (max-width: $mobile-or-tablet-screen) {
+    height: auto;
+  }
+}
